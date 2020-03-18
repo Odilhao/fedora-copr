@@ -26,7 +26,6 @@ i3lock is a simple screen locker like slock. After starting it, you will see a w
 rm -rf i3lock-color
 git clone https://github.com/PandorasFox/i3lock-color --recursive
 cd i3lock-color
-git reset --hard e07c3f0
 
 %build
 cd i3lock-color
