@@ -13,7 +13,7 @@ BuildRequires: pkgconfig(xkbcommon)
 BuildRequires: pkgconfig(xkbcommon-x11)
 
 BuildRequires: git
-BuildRequires: cairo-devel libev libev-devel libjpeg-turbo pam-devel xcb-util-devel xcb-util-image xcb-util-image-devel
+BuildRequires: cairo-devel libev libev-devel libjpeg-turbo pam-devel xcb-util-xrm-devel xcb-util-devel xcb-util-image xcb-util-image-devel
 BuildRequires: autoconf automake make gcc-c++
 
 Provides:  i3lock-color
