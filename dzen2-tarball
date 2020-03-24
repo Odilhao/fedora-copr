@@ -1,0 +1,26 @@
+#!/bin/sh
+REPOS="http://dzen.googlecode.com/svn/trunk/"
+
+# Revison is ${1} when given
+REVISION=${1:-$(date +%Y%m%d)}
+VERSION=${2:-0.8.5}
+NAME="${0%-tarball}-${VERSION}-${REVISION}"
+
+echo USAGE: "${0} [DATE]"
+echo "Creates a tarball with the sources from DATE"
+echo "Format of DATE: YYYY-MM-DD"
+echo "Default is today"
+echo
+
+echo Using revision ${REVISION}
+
+if [[ ! -e ${NAME} && ! -e ${NAME}.tar.gz ]]
+then
+	svn export -r "{${REVISION}}" ${REPOS} ${NAME} || \
+        (echo "svn export did not work, maybe wrong date format?" && exit 1)
+	
+	tar czvf ${NAME}.tar.gz ${NAME}
+	rm -rf ${NAME}
+else
+	echo "${NAME}(.tar.gz) does already exist"
+fi
