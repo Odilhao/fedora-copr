@@ -1,0 +1,60 @@
+diff -up dzen2-0.8.5-2010-01-04/Makefile.verbose dzen2-0.8.5-2010-01-04/Makefile
+--- dzen2-0.8.5-2010-01-04/Makefile.verbose	2009-02-02 02:44:07.000000000 +0100
++++ dzen2-0.8.5-2010-01-04/Makefile	2010-01-04 23:53:48.000000000 +0100
+@@ -17,14 +17,13 @@ options:
+ 
+ .c.o:
+ 	@echo CC $<
+-	@${CC} -c ${CFLAGS} $<
++	${CC} -c ${CFLAGS} $<
+ 
+ ${OBJ}: dzen.h action.h config.mk
+ 
+ dzen2: ${OBJ}
+ 	@echo LD $@
+-	@${LD} -o $@ ${OBJ} ${LDFLAGS}
+-	@strip $@
++	${LD} -o $@ ${OBJ} ${LDFLAGS}
+ 	@echo "Run ./help for documentation"
+ 
+ clean:
+diff -up dzen2-0.8.5-2010-01-04/gadgets/Makefile.verbose dzen2-0.8.5-2010-01-04/gadgets/Makefile
+--- dzen2-0.8.5-2010-01-04/gadgets/Makefile.verbose	2008-01-04 22:57:27.000000000 +0100
++++ dzen2-0.8.5-2010-01-04/gadgets/Makefile	2010-01-05 00:04:14.000000000 +0100
+@@ -17,31 +17,27 @@ options:
+ 
+ .c.o:
+ 	@echo CC $<
+-	@${CC} -c ${CFLAGS} $<
++	${CC} -c ${CFLAGS} $<
+ 
+ ${OBJ}: dbar.h config.mk
+ 
+ dbar: ${OBJ}
+ 	@echo LD $@
+-	@${LD} -o $@ dbar-main.o dbar.o ${LDFLAGS}
+-	@strip $@
++	${LD} -o $@ dbar-main.o dbar.o ${LDFLAGS}
+ 
+ gdbar: ${OBJ}
+ 	@echo LD $@
+ #	@${LD} -o $@ gdbar.o dbar.o ${LDFLAGS} -L${X11LIB} -lX11
+-	@${LD} -o $@ gdbar.o dbar.o ${LDFLAGS}
+-	@strip $@
++	${LD} -o $@ gdbar.o dbar.o ${LDFLAGS}
+ 
+ gcpubar: ${OBJ}
+ 	@echo LD $@
+ #	@${LD} -o $@ gcpubar.o dbar.o ${LDFLAGS} -L${X11LIB}
+-	@${LD} -o $@ gcpubar.o dbar.o ${LDFLAGS}
+-	@strip $@
++	${LD} -o $@ gcpubar.o dbar.o ${LDFLAGS}
+ 
+ textwidth: ${OBJ}
+ 	@echo LD $@
+-	@${LD} -o $@ textwidth.o ${LDFLAGS} -L${X11LIB} -lX11
+-	@strip $@
++	${LD} -o $@ textwidth.o ${LDFLAGS} -L${X11LIB} -lX11
+ 
+ clean:
+ 	@echo cleaning
