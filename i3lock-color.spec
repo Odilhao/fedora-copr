@@ -1,5 +1,5 @@
 name: i3lock-color
-Version: 2.12.c.1
+Version: 2.12.c.2
 Release: 1%{?dist}
 Summary: improved improved screen locker - "the ricing fork of i3lock"
 
